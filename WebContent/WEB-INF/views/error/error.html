@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>에러!!</title>
+    <script th:inline="javascript">
+        $(document).ready(function() {
+            init();
+        });
+
+        function init() {
+            var msg = [[${msg}]];
+            if (msg != '') {
+                alert(msg);
+            }
+            var contextPath = /*[[@{/}]]*/ '/';
+            var nextLocation = [[${nextLocation}]];
+            if (nextLocation != null && nextLocation != '') {
+                window.top.location.href = contextPath + nextLocation;
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
